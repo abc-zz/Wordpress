@@ -7,5 +7,3 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 CMD service apache2 star
-
-CMD /entrypoint.sh
