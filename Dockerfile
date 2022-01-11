@@ -1,4 +1,4 @@
-FROM  ssurge\wordpress:5.6-fpm-apache2
+FROM  ssurge/wordpress:5.6-fpm-apache2
 
 RUN set -ex\
     && apt update -y \
