@@ -16,6 +16,7 @@ spec:
       - image: okteto.dev/wordpress:5.6-fpm-apache2
         name: wordpress
         command: ["/bin/sh","-c","env"]
+           args: ["while true;do sleep 30; done;" ]
         ports:
         - containerPort: 80
         env:
