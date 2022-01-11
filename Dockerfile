@@ -6,4 +6,4 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-RUN service apache2 start
+CMD ./entrypoint.sh
