@@ -15,7 +15,7 @@ spec:
       containers:
       - image: okteto.dev/wordpress:5.6-fpm-apache2
         name: wordpress
-        command: ["/bin/sh","-c", "./entrypoint.sh"]
+        command: ["/bin/sh","-c", "/entrypoint.sh"]
 
         ports:
         - containerPort: 80
