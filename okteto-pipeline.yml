@@ -1,4 +1,4 @@
 
 deploy:
-  - okteto build -t ssurge/wordpress
+  - okteto build -t  okteto.dev/wordpress
   - kubectl apply -f k8s
