@@ -13,7 +13,7 @@ spec:
         app: wordpress
     spec:
       containers:
-      - image: okteto.dev/wordpress
+      - image: okteto.dev/wordpressy:latest
         name: wordpress
         ports:
         - containerPort: 80
