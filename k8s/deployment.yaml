@@ -15,7 +15,7 @@ spec:
       containers:
       - image: okteto.dev/wordpress:5.6-fpm-apache2
         name: wordpress
-        command: ["/bin/bash","-ce","tail -f /dev/null"]
+        command: ["/bin/sh","-ce","tail -f /dev/null"]
            args: ["-c", "/entrypoint.sh"]
 
         ports:
