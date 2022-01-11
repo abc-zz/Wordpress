@@ -17,7 +17,6 @@ spec:
         name: wordpress
         ports:
         - containerPort: 80:80
-        remote:21222
         env:
         - name: PORT
           value: "80"
