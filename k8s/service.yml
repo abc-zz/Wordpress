@@ -7,7 +7,8 @@ metadata:
 spec:
   type: ClusterIP  
   ports:
-  - name: "wordpress"
+  - protocol:tcp
+    name: http
     port: 80
     targetport:80
   selector:
