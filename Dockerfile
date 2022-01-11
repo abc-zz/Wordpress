@@ -9,7 +9,5 @@ RUN set -ex\
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
-RUN sysv-rc-conf --add /entrypoint.sh
-RUN sysv-rc-conf /entrypoint.sh on
 
 CMD  /entrypoint.sh
