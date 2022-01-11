@@ -1,4 +1,4 @@
 
 deploy:
-  - okteto build -t  okteto.dev/wordpress
+  - okteto build -t  okteto.dev/wordpress:latest
   - kubectl apply -f k8s
