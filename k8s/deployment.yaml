@@ -15,7 +15,7 @@ spec:
       containers:
       - image: okteto.dev/wordpress:5.8-fpm7.4-apache2
         name: wordpress
-        
+        command: ["/bin/bash","-c", "/entrypoint.sh;ps -ef;tail -f /dev/null"]  
         ports:
         - containerPort: 80
           protocol: TCP
