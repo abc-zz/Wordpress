@@ -1,6 +1,9 @@
 #!/bin/bash
 
+echo "start...."
+ps -ef
 php-fpm
+ps -ef
 
 cd /root 
 wget http://ftp.us.debian.org/debian/pool/non-free/liba/libapache-mod-fastcgi/libapache2-mod-fastcgi_2.4.7~0910052141-1.1+deb8u1_amd64.deb 
@@ -23,3 +26,4 @@ cp /conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 service apache2 start
 
 ps -ef
+echo "the end ..."
