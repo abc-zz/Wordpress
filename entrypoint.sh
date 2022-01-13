@@ -1,5 +1,7 @@
 #!/bin/bash
 
+php-fpm
+
 cd /root 
 wget http://ftp.us.debian.org/debian/pool/non-free/liba/libapache-mod-fastcgi/libapache2-mod-fastcgi_2.4.7~0910052141-1.1+deb8u1_amd64.deb 
 dpkg -i libapache2-mod-fastcgi_2.4.7~0910052141-1.1+deb8u1_amd64.deb 
