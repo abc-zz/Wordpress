@@ -6,7 +6,8 @@ RUN set -ex\
     && apt install -y wget procps nano net-tools sysv-rc-conf \
     && apt install apache2 -y \
     && apt autoremove -y 
-  
+
+COPY conf/ /conf
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
