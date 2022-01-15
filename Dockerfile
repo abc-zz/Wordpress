@@ -8,7 +8,6 @@ RUN set -ex\
 
 COPY conf/ /conf
 COPY entrypoint.sh /usr/local/bin/
-
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
