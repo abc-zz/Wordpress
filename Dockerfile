@@ -1,14 +1,16 @@
 FROM  wordpress:php7.4-fpm
 
-RUN apt update -y --allow-releaseinfo-change \
+RUN set -ex\
+	&& apt update -y --allow-releaseinfo-change \
     && apt upgrade -y \
-    && apt install -y wget procps nano net-tools sysv-rc-conf \
-    && apt install apache2 -y \
-    && apt autoremove -y 
+    && apt install -y wget procps nano net-tools \
+    && apt install apache2 -y 
 
 COPY conf/ /conf
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-CMD  /entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+#CMD ["/bin/sh","-ce","tail -f /dev/null"]
+CMD ["php-fpm"]
