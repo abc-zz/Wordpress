@@ -13,7 +13,7 @@ spec:
         app: wordpress
     spec:
       containers:
-      - image: wordpress
+      - image: okteto.dev/wordpress:5.8-fpm7.4-apache2
         name: wordpress
 
         ports:
