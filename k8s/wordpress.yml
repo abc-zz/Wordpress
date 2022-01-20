@@ -26,8 +26,7 @@ spec:
   selector:
     matchLabels:
       app: wordpress
-      tier: frontend
- 
+      tier: frontend 
   template:
     metadata:
       labels:
