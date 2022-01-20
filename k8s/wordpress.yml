@@ -39,23 +39,11 @@ spec:
       - image: okteto.dev/wordpress:5.8-fpm7.4-apache2
         name: wordpress
       env:
+      - name: WORDPRESS_DB_HOST
+        value: wordpress-mysql
 
-      - name: WORDPRESS_DB_NAME
-        valueFrom:
-           secretKeyRef:
-              name: dbsecret
-              key: dbname  
-      - name: WORDPRESS_DB_USER
-        valueFrom:
-          secretKeyRef:
-              name: dbsecret
-              key: username
-      - name: WORDPRESS_DB_PASSWORD
-        valueFrom:
-           secretKeyRef:
-              name: dbsecret
-              key: password
       ports:
       - containerPort: 80
+        name: wordpress
          protocol: TCP  
 
