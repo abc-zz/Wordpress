@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
 - wordpress.yml
 - mysql.yml
-images:
-- name: frontend-wordpress
+
