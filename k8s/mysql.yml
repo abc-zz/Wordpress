@@ -17,7 +17,7 @@ kind: Service                     # Type of kubernetes resource
 metadata:
   name: wordpress-mysql           # Name of the resource
   labels:                         # Labels that will be applied to the resource
-    app: mysql
+    app: wordpress
 spec:
   ports:
     - port: 3306
@@ -29,7 +29,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment                    # Type of the kubernetes resource
 metadata:
-  name: mysql                       # Name of the deployment
+  name: wordpress-mysql                       # Name of the deployment
   labels:                           # Labels applied to this deployment 
     app: wordpress
 spec:
