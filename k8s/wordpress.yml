@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - image: okteto.dev/wordpress:5.8-fpm7.4-apache2
-        name: frontend-wordpress
+        name: wordpress
       env:
       - name: WORDPRESS_DB_HOST
         value: wordpress-mysql
