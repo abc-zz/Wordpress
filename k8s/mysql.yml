@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim        # Create a PersistentVolumeClaim to request a
 metadata:                          # Claim name and labels
   name: mysql-pv-claim
   labels:
-    app: wordpress-app
+    app: wordpress
 spec:                              # Access mode and resource limits
   accessModes:
     - ReadWriteOnce                # ReadWriteOnce means the volume can be mounted as read-write by a single Node
