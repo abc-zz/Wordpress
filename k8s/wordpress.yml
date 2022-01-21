@@ -48,17 +48,17 @@ spec:
           valueFrom:
              secretKeyRef:
                 name: dbsecret
-                key: dbname  
+                key: mysql_dbname  
         - name: WORDPRESS_DB_USER
           valueFrom:
             secretKeyRef:
                 name: dbsecret
-                key: username
+                key: mysql_username
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
              secretKeyRef:
                 name: dbsecret
-                key: password
+                key: mysql_password
         ports:
         - containerPort: 80
           name: wordpress
