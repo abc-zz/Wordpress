@@ -16,11 +16,15 @@ apiVersion: v1                    # API version
 kind: Service                     # Type of kubernetes resource 
 metadata:
   name: wordpress-mysql           # Name of the resource
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
   labels:                         # Labels that will be applied to the resource
     app: wordpress
 spec:
   ports:
-    - port: 3306
+  - name: sql
+    port: 3306
+    targetPort: 3306
   selector:                       # Selects any Pod with labels `app=wordpress,tier=mysql`
     app: wordpress
     tier: mysql
