@@ -15,29 +15,25 @@ spec:
     targetPort: 22
   selector:
     app: wordpress
-    tier: frontend
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress-frontend
+  name: wordpress
   labels: 
     app: wordpress
-    tier: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: wordpress
-      tier: frontend
   strategy:
     type: Recreate    
   template:
     metadata:
       labels:
         app: wordpress
-        tier: frontend
     spec:
       containers:
       - image: okteto.dev/wordpress:5.8-fpm7.4-apache2
