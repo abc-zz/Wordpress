@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim        # Create a PersistentVolumeClaim to request a
 metadata:                          # Claim name and labels
   name: mysql-pv-claim
   labels:
-    app: wordpress
+    app: mysql
 spec:                              # Access mode and resource limits
   accessModes:
     - ReadWriteOnce                # ReadWriteOnce means the volume can be mounted as read-write by a single Node
@@ -15,37 +15,32 @@ spec:                              # Access mode and resource limits
 apiVersion: v1                    # API version
 kind: Service                     # Type of kubernetes resource 
 metadata:
-  name: wordpress-mysql           # Name of the resource
+  name: mysql           # Name of the resource
   labels:                         # Labels that will be applied to the resource
-    app: wordpress
-    tier: mysql
+    app: mysql
 spec:
   ports:
     - port: 3306
   selector:                       # Selects any Pod with labels `app=wordpress,tier=mysql`
-    app: wordpress
-    tier: mysql
+    app: mysql
 
 ---
 apiVersion: apps/v1
 kind: Deployment                    # Type of the kubernetes resource
 metadata:
-  name: wordpress-mysql                       # Name of the deployment
+  name: mysql                       # Name of the deployment
   labels:                           # Labels applied to this deployment 
-    app: wordpress
-    tier: mysql
+    app: mysql
 spec:
   selector:
     matchLabels:                    # This deployment applies to the Pods matching the specified labels
-      app: wordpress
-      tier: mysql
+      app: mysql
   strategy:
     type: Recreate
   template:                         # Template for the Pods in this deployment
     metadata:
       labels:                       # Labels to be applied to the Pods in this deployment
-        app: wordpress
-        tier: mysql
+        app: mysql
     spec:                           # The spec for the containers that will be run inside the Pods in this deployment
       containers:
       - image: mysql:5.6            # The container image
