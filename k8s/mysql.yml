@@ -32,6 +32,7 @@ metadata:
   name: wordpress-mysql                       # Name of the deployment
   labels:                           # Labels applied to this deployment 
     app: wordpress
+    tier: mysql
 spec:
   selector:
     matchLabels:                    # This deployment applies to the Pods matching the specified labels
@@ -53,7 +54,7 @@ spec:
           valueFrom:                # Read environment variables from kubernetes secrets
             secretKeyRef:
               name: dbsecret
-              key: password
+              key: mysql_password
         ports:
         - containerPort: 3306        # The port that the container exposes       
           name: mysql
