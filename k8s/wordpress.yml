@@ -24,6 +24,7 @@ metadata:
   name: wordpress-frontend
   labels: 
     app: wordpress
+    tier: frontend
 spec:
   replicas: 1
   selector:
