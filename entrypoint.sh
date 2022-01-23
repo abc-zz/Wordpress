@@ -118,6 +118,8 @@ cp /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-de
 rm /etc/apache2/sites-enabled/000-default.conf
 cp /conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
+ls
+
 echo "Start Apache2 Service..."
 service apache2 start
 
