@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim        # Create a PersistentVolumeClaim to request a
 metadata:                          # Claim name and labels
   name: mysql-wordpress-claim
   labels:
-    app: mysql
+    app: wordpress-mysql
 spec:                              # Access mode and resource limits
   accessModes:
     - ReadWriteOnce                # ReadWriteOnce means the volume can be mounted as read-write by a single Node
@@ -15,7 +15,7 @@ spec:                              # Access mode and resource limits
 apiVersion: v1                    # API version
 kind: Service                     # Type of kubernetes resource 
 metadata:
-  name: mysql           # Name of the resource
+  name: mysql                     # Name of the resource
   labels:                         # Labels that will be applied to the resource
     app: mysql
 spec:
