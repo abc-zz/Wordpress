@@ -119,7 +119,6 @@ rm /etc/apache2/sites-enabled/000-default.conf
 cp /conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 pwd
-ping mysql
 
 echo "Start Apache2 Service..."
 service apache2 start
