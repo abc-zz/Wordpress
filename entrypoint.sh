@@ -122,6 +122,7 @@ pwd
 ls
 cd \var\www\html
 ls
+ls \var\www\html
 
 echo "Start Apache2 Service..."
 service apache2 start
